@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToDoService } from './to-do.service';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'todo-list';
 }
+
+todoList = [];
+
+constructor(public toDoService: ToDoService){
+
+}
+ngOnInit(): void {
+  this.todoList = this.toDoService.getTODOList();
+  console.log("todo list:", this.todoList);
+}
+
