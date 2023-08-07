@@ -9,7 +9,8 @@ import { ToDoService } from './to-do.service';
 export class AppComponent {
   title = 'todo-list';
 
-  todoList = [];
+  //angular12以後對型態要求較嚴格, 須指定型態
+  todoList:any[] = [];
 
   constructor(public toDoService: ToDoService) {}
   ngOnInit(): void {
