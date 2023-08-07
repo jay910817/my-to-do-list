@@ -8,7 +8,6 @@ import { ToDoService } from './to-do.service';
 })
 export class AppComponent {
   title = 'todo-list';
-}
 
 todoList = [];
 
@@ -20,3 +19,5 @@ ngOnInit(): void {
   console.log("todo list:", this.todoList);
 }
 
+
+}
