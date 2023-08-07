@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class ToDoService {
 
   constructor() { }
-}
 
 /**
 * 回傳TODO清單
@@ -20,4 +19,6 @@ getTODOList(){
      });
     }
   return result;
+}
+
 }
