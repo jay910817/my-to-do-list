@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToDoService {
+  constructor() {}
 
-  constructor() { }
-
-/**
-* 回傳TODO清單
-*/
-getTODOList(){
-  let result = [];
-  for (let index = 0; index < 5; index++) {
-  result.push({
-    id: index,
-    todo: "todo" + (index+1).toString()
-     });
+  /**
+   * 回傳TODO清單
+   */
+  getTODOList() {
+    let result = [];
+    for (let index = 0; index < 5; index++) {
+      result.push({
+        id: index,
+        todo: 'todo' + (index + 1).toString(),
+      });
     }
-  return result;
-}
-
+    return result;
+  }
 }
