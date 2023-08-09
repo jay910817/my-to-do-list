@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { ToDoService } from './to-do.service';
 
@@ -19,7 +20,7 @@ export class AppComponent {
 
   //紀錄最新id
   addId = 0;
-  addTODOTitle = "";
+  addTODOTitle = '';
 
   addTODO(){
     //輸入長度為0不新增
@@ -33,7 +34,12 @@ export class AppComponent {
 
     //流水號增加
     this.addId++;
-    this.addTODOTitle = "";
+    this.addTODOTitle = '';
+  }
+
+  deleteTODO(index: number){
+    //刪除清單中第index筆
+    this.todoList.splice(index);
   }
 
 }

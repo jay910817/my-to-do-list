@@ -11,13 +11,6 @@
 </div>
 
 <div class="offset-3 col-6">
-  <div class="todo-item" *ngFor="let item of todoList; let i = index;">
-    <span>{{ item.todo }}</span>
-    <button type="button" class="btn btn-outline-danger">Delete</button>
-  </div>
-</div>
-
-<div class="offset-3 col-6">
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="TODO..." [(ngModel)]="addTODOTitle">
     <div class="input-group-append">
@@ -30,6 +23,14 @@
 <div class="offset-2 col-8">
   <hr>
 </div>
+
+<div class="offset-3 col-6">
+  <div class="todo-item" *ngFor="let item of todoList; let i = index;">
+    <span>{{ item.todo }}</span>
+    <button type="button" class="btn btn-outline-danger" (click)="deleteTODO(i)">Delete</button>
+  </div>
+</div>
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
