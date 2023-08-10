@@ -26,8 +26,8 @@
 
 <div class="offset-3 col-6">
   <div class="todo-item" *ngFor="let item of todoList; let i = index;">
-    <span>{{ item.todo }}</span>
-    <button type="button" class="btn btn-outline-danger" (click)="deleteTODO(i)">Delete</button>
+    <span>{{ item.todoTitle }}</span>
+    <button type="button" class="btn btn-outline-danger" (click)="deleteTODO(item.id)">Delete</button>
   </div>
 </div>
 

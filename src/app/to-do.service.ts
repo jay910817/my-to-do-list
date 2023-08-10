@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root',
+
 })
 export class ToDoService {
+  baseUrl = 'https://localhost:5001/api/';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   /**
   * 回傳TODO清單
@@ -19,5 +23,6 @@ export class ToDoService {
       });
     }
     return result;
+    return this.http.get(`${this.baseUrl}todo/list`);
   }
 }
