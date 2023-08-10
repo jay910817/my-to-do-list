@@ -25,4 +25,22 @@ export class ToDoService {
     return result;
     return this.http.get(`${this.baseUrl}todo/list`);
   }
+
+  /**
+  * 新增TODO
+  */
+  addTODO(todoTitle) {
+    //送出資料
+    let data = {
+      todoTitle: todoTitle
+    };
+    return this.http.post(`${this.baseUrl}todo/add`, data);
+  }
+
+  /**
+  * 刪除一筆TODO
+  */
+  deleteTODO(id: number) {
+    return this.http.delete(`${this.baseUrl}todo/delete/${id}`);
+  }
 }

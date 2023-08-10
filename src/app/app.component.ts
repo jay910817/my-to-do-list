@@ -14,6 +14,7 @@ export class AppComponent {
   todoList:any[] = [];
 
   constructor(public toDoService: ToDoService) {}
+
   ngOnInit(): void {
     this.getList();
     this.todoList = this.toDoService.getTODOList();
@@ -29,7 +30,7 @@ export class AppComponent {
     (error: HttpErrorResponse) => {
       console.log('ERROR');
     });
-    }
+  }
 
   //紀錄最新id
   addId = 0;
@@ -49,27 +50,17 @@ export class AppComponent {
     (error: HttpErrorResponse) => {
       console.log('ERROR');
     });
-
-
-    //送出資料
-    let data = {
-      todoTitle: todoTitle
-    };
-    return this.http.post(`${this.baseUrl}todo/add`, data);
-
   }
 
   deleteTODO(index: number){
     //刪除清單中第index筆
     this.toDoService.deleteTODO(id).subscribe(
-      (data: any) => {
-      //重新取得TODO清單
-      this.getList();
-      },
-      (error: HttpErrorResponse) => {
+    (data: any) => {
+        //重新取得TODO清單
+        this.getList();
+    },
+    (error: HttpErrorResponse) => {
       console.log('ERROR');
-      });
-    return this.http.delete(`${this.baseUrl}todo/delete/${id}`);
+    });
   }
-
 }
