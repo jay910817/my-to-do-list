@@ -15,21 +15,13 @@ export class ToDoService {
   * 回傳TODO清單
   */
   getTODOList() {
-    let result = [];
-    for (let index = 0; index < 5; index++) {
-      result.push({
-        id: index,
-        todo: "todo" + (index + 1).toString()
-      });
-    }
-    return result;
     return this.http.get(`${this.baseUrl}todo/list`);
   }
 
   /**
   * 新增TODO
   */
-  addTODO(todoTitle) {
+  addTODO(todoTitle: string) {
     //送出資料
     let data = {
       todoTitle: todoTitle

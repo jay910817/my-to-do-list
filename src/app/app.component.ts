@@ -17,7 +17,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.getList();
-    this.todoList = this.toDoService.getTODOList();
+
     console.log("todo list:", this.todoList);
   }
 
@@ -54,7 +54,7 @@ export class AppComponent {
 
   deleteTODO(index: number){
     //刪除清單中第index筆
-    this.toDoService.deleteTODO(id).subscribe(
+    this.toDoService.deleteTODO(index).subscribe(
     (data: any) => {
         //重新取得TODO清單
         this.getList();
